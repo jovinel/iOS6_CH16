@@ -15,7 +15,7 @@
     if (self = [super initWithCoder:coder]) {
         _currentColor = [UIColor redColor];
         _useRandomColor = NO;
-        _drawImage = [UIImage imageNamed:@"iphone.png"];
+        _drawImage = [UIImage imageNamed:@"smiley.png"];
     }
     return self;
 }
@@ -35,15 +35,39 @@
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
     UITouch *touch = [touches anyObject];
     _lastTouch = [touch locationInView:self];
-    
-    [self setNeedsDisplay];
+    if (_shapeType == kImageShape) {
+        CGFloat horizontalOffset = _drawImage.size.width / 2;
+        CGFloat verticalOffset = _drawImage.size.height / 2;
+        
+        _redrawRect = CGRectUnion(_redrawRect,
+                                  CGRectMake(_lastTouch.x - horizontalOffset,
+                                             _lastTouch.y - verticalOffset,
+                                             _drawImage.size.width,
+                                             _drawImage.size.height));
+
+    }
+    else
+    {
+        _redrawRect = CGRectUnion(_redrawRect, self.currentRect);
+    }
+    _redrawRect = CGRectInset(_redrawRect, -2.0, -2.0);
+    [self setNeedsDisplayInRect:_redrawRect];
 }
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
     UITouch *touch = [touches anyObject];
     _lastTouch = [touch locationInView:self];
-    
-    [self setNeedsDisplay];
+    if (_shapeType == kImageShape) {
+        CGFloat horizontalOffset = _drawImage.size.width / 2;
+        CGFloat verticalOffset = _drawImage.size.height / 2;
+        _redrawRect = CGRectUnion(_redrawRect,
+                                  CGRectMake(_lastTouch.x - horizontalOffset,
+                                             _lastTouch.y - verticalOffset,
+                                             _drawImage.size.width,
+                                             _drawImage.size.height));
+    }
+    _redrawRect = CGRectUnion(_redrawRect, self.currentRect);
+    [self setNeedsDisplayInRect:_redrawRect];
 }
 /*
 // Only override drawRect: if you perform custom drawing.
@@ -57,7 +81,7 @@
     CGContextSetStrokeColorWithColor(context, _currentColor.CGColor);
     
     CGContextSetFillColorWithColor(context, _currentColor.CGColor);
-    CGRect currentRect = CGRectMake(_firstTouch.x, _firstTouch.y, _lastTouch.x - _firstTouch.x, _lastTouch.y - _firstTouch.y);
+    
     
     switch (_shapeType) {
         case kLineShape:
@@ -66,19 +90,28 @@
             CGContextStrokePath(context);
             break;
         case kRectShape:
-            CGContextAddRect(context, currentRect);
+            CGContextAddRect(context, self.currentRect);
             CGContextDrawPath(context, kCGPathFillStroke);
             break;
         case kEllipseShape:
-            CGContextAddEllipseInRect(context, currentRect);
+            CGContextAddEllipseInRect(context, self.currentRect);
             CGContextDrawPath(context, kCGPathFillStroke);
             break;
-        case kImageShape:
+        case kImageShape: {
+            CGFloat horizontalOffset = _drawImage.size.width / 2;
+            CGFloat verticalOffset = _drawImage.size.height / 2;
+            CGPoint drawPoint = CGPointMake(_lastTouch.x - horizontalOffset,
+                                            _lastTouch.y - verticalOffset);
+            [_drawImage drawAtPoint:drawPoint];
             break;
+        }
         default:
             break;
     }
 }
 
+- (CGRect)currentRect {
+    return CGRectMake (_firstTouch.x, _firstTouch.y, _lastTouch.x - _firstTouch.x, _lastTouch.y - _firstTouch.y);
+}
 
 @end

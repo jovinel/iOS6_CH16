@@ -25,6 +25,7 @@
 		47053D281855B554003C358F /* QuartzFunTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 47053D271855B554003C358F /* QuartzFunTests.m */; };
 		47053D331855B589003C358F /* BIDQuartzFunView.m in Sources */ = {isa = PBXBuildFile; fileRef = 47053D321855B589003C358F /* BIDQuartzFunView.m */; };
 		47053D371855B658003C358F /* UIColor+BIDRandom.m in Sources */ = {isa = PBXBuildFile; fileRef = 47053D361855B658003C358F /* UIColor+BIDRandom.m */; };
+		47053D391855C958003C358F /* smiley.png in Resources */ = {isa = PBXBuildFile; fileRef = 47053D381855C958003C358F /* smiley.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		47053D341855B5FE003C358F /* BIDConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BIDConstants.h; sourceTree = "<group>"; };
 		47053D351855B658003C358F /* UIColor+BIDRandom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+BIDRandom.h"; sourceTree = "<group>"; };
 		47053D361855B658003C358F /* UIColor+BIDRandom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+BIDRandom.m"; sourceTree = "<group>"; };
+		47053D381855C958003C358F /* smiley.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = smiley.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +126,7 @@
 		47053CFC1855B554003C358F /* QuartzFun */ = {
 			isa = PBXGroup;
 			children = (
+				47053D381855C958003C358F /* smiley.png */,
 				47053D051855B554003C358F /* BIDAppDelegate.h */,
 				47053D061855B554003C358F /* BIDAppDelegate.m */,
 				47053D0E1855B554003C358F /* BIDViewController.h */,
@@ -249,6 +252,7 @@
 				47053D0B1855B554003C358F /* Default@2x.png in Resources */,
 				47053D0D1855B554003C358F /* Default-568h@2x.png in Resources */,
 				47053D131855B554003C358F /* BIDViewController.xib in Resources */,
+				47053D391855C958003C358F /* smiley.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
