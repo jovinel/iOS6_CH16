@@ -56,6 +56,9 @@
     CGContextSetLineWidth(context, 2.0);
     CGContextSetStrokeColorWithColor(context, _currentColor.CGColor);
     
+    CGContextSetFillColorWithColor(context, _currentColor.CGColor);
+    CGRect currentRect = CGRectMake(_firstTouch.x, _firstTouch.y, _lastTouch.x - _firstTouch.x, _lastTouch.y - _firstTouch.y);
+    
     switch (_shapeType) {
         case kLineShape:
             CGContextMoveToPoint(context, _firstTouch.x, _firstTouch.y);
@@ -63,8 +66,12 @@
             CGContextStrokePath(context);
             break;
         case kRectShape:
+            CGContextAddRect(context, currentRect);
+            CGContextDrawPath(context, kCGPathFillStroke);
             break;
         case kEllipseShape:
+            CGContextAddEllipseInRect(context, currentRect);
+            CGContextDrawPath(context, kCGPathFillStroke);
             break;
         case kImageShape:
             break;
