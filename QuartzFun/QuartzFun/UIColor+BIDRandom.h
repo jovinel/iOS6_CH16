@@ -1,5 +1,5 @@
 //
-//  BIDViewController.h
+//  UIColor+BIDRandom.h
 //  QuartzFun
 //
 //  Created by Crescens Techstars on 12/9/13.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BIDViewController : UIViewController
-- (IBAction)changeShape:(id)sender;
+@interface UIColor (BIDRandom)
++ (UIColor *)randomColor;
 
 @end

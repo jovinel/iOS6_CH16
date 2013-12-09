@@ -24,6 +24,7 @@
 		47053D251855B554003C358F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 47053D231855B554003C358F /* InfoPlist.strings */; };
 		47053D281855B554003C358F /* QuartzFunTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 47053D271855B554003C358F /* QuartzFunTests.m */; };
 		47053D331855B589003C358F /* BIDQuartzFunView.m in Sources */ = {isa = PBXBuildFile; fileRef = 47053D321855B589003C358F /* BIDQuartzFunView.m */; };
+		47053D371855B658003C358F /* UIColor+BIDRandom.m in Sources */ = {isa = PBXBuildFile; fileRef = 47053D361855B658003C358F /* UIColor+BIDRandom.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,9 @@
 		47053D271855B554003C358F /* QuartzFunTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QuartzFunTests.m; sourceTree = "<group>"; };
 		47053D311855B589003C358F /* BIDQuartzFunView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BIDQuartzFunView.h; sourceTree = "<group>"; };
 		47053D321855B589003C358F /* BIDQuartzFunView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BIDQuartzFunView.m; sourceTree = "<group>"; };
+		47053D341855B5FE003C358F /* BIDConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BIDConstants.h; sourceTree = "<group>"; };
+		47053D351855B658003C358F /* UIColor+BIDRandom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+BIDRandom.h"; sourceTree = "<group>"; };
+		47053D361855B658003C358F /* UIColor+BIDRandom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+BIDRandom.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +131,9 @@
 				47053D111855B554003C358F /* BIDViewController.xib */,
 				47053D311855B589003C358F /* BIDQuartzFunView.h */,
 				47053D321855B589003C358F /* BIDQuartzFunView.m */,
+				47053D341855B5FE003C358F /* BIDConstants.h */,
+				47053D351855B658003C358F /* UIColor+BIDRandom.h */,
+				47053D361855B658003C358F /* UIColor+BIDRandom.m */,
 				47053CFD1855B554003C358F /* Supporting Files */,
 			);
 			path = QuartzFun;
@@ -280,6 +287,7 @@
 				47053D071855B554003C358F /* BIDAppDelegate.m in Sources */,
 				47053D101855B554003C358F /* BIDViewController.m in Sources */,
 				47053D331855B589003C358F /* BIDQuartzFunView.m in Sources */,
+				47053D371855B658003C358F /* UIColor+BIDRandom.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
