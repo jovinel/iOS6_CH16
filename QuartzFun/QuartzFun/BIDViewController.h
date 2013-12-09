@@ -9,6 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface BIDViewController : UIViewController
+//- (IBAction)changeShape:(id)sender;
+//- (IBAction)changeColor:(id)sender;
+//@property (weak, nonatomic) IBOutlet UISegmentedControl *colorControl;
 - (IBAction)changeShape:(id)sender;
-
+- (IBAction)changeColor:(id)sender;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *colorControl;
 @end

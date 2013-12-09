@@ -47,13 +47,31 @@
 }
 /*
 // Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
+// An empty implementation adversely affects performance during animation. */
+
 - (void)drawRect:(CGRect)rect
 {
-    // Drawing code
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    
+    CGContextSetLineWidth(context, 2.0);
+    CGContextSetStrokeColorWithColor(context, _currentColor.CGColor);
+    
+    switch (_shapeType) {
+        case kLineShape:
+            CGContextMoveToPoint(context, _firstTouch.x, _firstTouch.y);
+            CGContextAddLineToPoint(context, _lastTouch.x, _lastTouch.y);
+            CGContextStrokePath(context);
+            break;
+        case kRectShape:
+            break;
+        case kEllipseShape:
+            break;
+        case kImageShape:
+            break;
+        default:
+            break;
+    }
 }
-*/
 
-- (IBAction)changeColor:(id)sender {
-}
+
 @end
